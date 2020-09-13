@@ -14,31 +14,52 @@ class Posts {
     
     //fetches the post from the author 'name'
     get(name) {
-	return this.posts.filter(x => {
-	    return (x.author == name)
-	})
+	try {	    
+	    return this.posts.filter(x => {
+		return (x.author == name)
+	    })	    
+	}
+
+	catch(err) {
+	    console.error(err)
+	}
     }
-    
+
+    //fetches post using uid
     fetchPost(uid) {
-	var flist =  this.posts.filter(x => {
-	    return (x['uid'] == uid)
-	})
-	return flist
+	try {
+	    var flist =  this.posts.filter(x => {
+		return (x['uid'] == uid)
+	    })
+	    return flist	    
+	}
+
+	catch (err) {
+	    console.error(err)
+	}
+
     }
 
     //validate the comments array
     validate(comments) {
-	let emails = comments.map(x => {
-	    return x.username
-	})
+	try {
+	    let emails = comments.map(x => {
+		return x.username
+	    })
 
-	console.log(emails)
+	    console.log(emails)
+	    
+	    let invalid_list = emails.filter(x => {
+		return !email_validator.validate(x)
+	    })
+	    
+	    return (invalid_list.length == 0)
+	}
 	
-	let invalid_list = emails.filter(x => {
-	    return !email_validator.validate(x)
-	})
-	
-	return (invalid_list.length == 0)
+	catch (err) {
+	    console.error(err)
+	}
+
     }    
     
 }
