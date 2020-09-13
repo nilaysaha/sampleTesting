@@ -1,0 +1,25 @@
+{
+  "name": "sampletesting",
+  "version": "1.0.0",
+  "description": "sample testcases in mocha",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tst/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nilaysaha/sampleTesting.git"
+  },
+  "author": "nsaha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nilaysaha/sampleTesting/issues"
+  },
+  "homepage": "https://github.com/nilaysaha/sampleTesting#readme",
+  "devDependencies": {
+    "typings": "^2.1.1"
+  },
+  "dependencies": {
+    "email-validator": "^2.0.4"
+  }
+}
